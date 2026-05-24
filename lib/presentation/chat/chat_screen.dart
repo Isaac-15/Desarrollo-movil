@@ -14,7 +14,38 @@ class ChatScreen extends StatelessWidget {
           ),
         ),
         title: Text('Mi Pastelito'),
-      )
+        centerTitle: false,
+      ),
+      body: _Chatview(),
+    );
+  }
+}
+
+class _Chatview extends StatelessWidget {
+ 
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          children: [
+            Expanded(
+               child: ListView.builder(
+                itemCount: 50,
+                itemBuilder: (context, index) {
+                 
+                return Text('Indice : $index');
+
+               },)),
+        
+        
+            
+            Text('Hola')
+          ],
+        ),
+      ),
     );
   }
 }
