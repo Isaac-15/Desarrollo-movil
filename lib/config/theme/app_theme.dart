@@ -28,7 +28,7 @@ class AppTheme {
 
     return ThemeData(  useMaterial3: true,
      colorSchemeSeed: _colorTheme[selectedColor],
-      brightness: Brightness.dark
+      //brightness: Brightness.dark
      
     
     );
