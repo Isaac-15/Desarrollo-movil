@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:aplicacion_chat/domain/entities/message.dart';
 import 'package:flutter/material.dart';
 
