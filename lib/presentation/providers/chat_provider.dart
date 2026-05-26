@@ -10,17 +10,18 @@ class ChatProvider extends ChangeNotifier{
 
   List<Message> messageList = [
 
-    Message(text: 'hola amor',fromWho: FromWho.me),
-    Message(text: 'ya regresaste del trabajo?', fromWho: FromWho.me),
+    Message(text: 'hola bro',fromWho: FromWho.me),
+    Message(text: 'ya te encontraste a la cara de bagre?', fromWho: FromWho.me),
   ];
 
   Future<void> sendMessage(String text) async{
-    if(text.isEmpty) return;
+    final trimmedText = text.trim();
+    if(trimmedText.isEmpty) return;
 
-    final newMessage = Message(text: text, fromWho: FromWho.me);
+    final newMessage = Message(text: trimmedText, fromWho: FromWho.me);
     messageList.add(newMessage);
 
-    if (text.endsWith('?')){
+    if (trimmedText.endsWith('?')){
       await herReply();
     }
     notifyListeners();

@@ -36,7 +36,7 @@ class  MessageFiledBox extends StatelessWidget {
 
             icon: const Icon (Icons.send_outlined),
             onPressed: (){
-              final textValue = textController.value.text;
+              final textValue = textController.value.text.trim();
               
               textController.clear();
               onValue(textValue);
@@ -54,10 +54,11 @@ class  MessageFiledBox extends StatelessWidget {
       decoration: inputDecoration,
        
       onFieldSubmitted: (value) {
+        final textValue = value.trim();
         
         textController.clear();
         focusnode.requestFocus();
-        onValue(value);
+        onValue(textValue);
       },
 
       );
